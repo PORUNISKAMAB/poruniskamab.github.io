@@ -137,6 +137,101 @@
 <div class="three-shade-col">
     <div class="col-sm-4">
         <!--svg class="icon icon-envelope-o"><use xlink:href="#icon-envelope-o"></use></svg-->
+		<h4>Daya Tampung Mahasiswa = 120</h4>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+				<script type="text/javascript">
+					google.charts.load('current', {'packages':['corechart']});
+					google.charts.setOnLoadCallback(drawChart1);
+					function drawChart1() {
+						var data = google.visualization.arrayToDataTable([
+						  ['Tahun', 'Seleksi', 'Lulus seleksi'],
+						  ['2020',  0,       0],
+						  ['2021',  143,      109]
+						]);
+
+						var options = {
+						  title: 'Data Visual Penerimaan Mahasiswa Baru',
+						  curveType: 'function',
+						  legend: { position: 'bottom' }
+						};
+
+						var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+						chart.draw(data, options);
+					  }
+				</script>
+				<body>
+					<div id="curve_chart" style="width: 350px; height: 300px"></div>
+				</body>
+    </div>
+    <div class="col-sm-4">
+        <!--svg class="icon icon-clock-o"><use xlink:href="#icon-clock-o"></use></svg-->
+        <h5>Prestasi Akademik dan non-akademik (2021)</h5>
+        <div id="piechart"></div> 
+			<script type="text/javascript" 
+			src="https://www.gstatic.com/charts/loader.js"></script> 
+			  
+			<script type="text/javascript"> 
+			google.charts.load('current', {'packages':['corechart']}); 
+			google.charts.setOnLoadCallback(drawChart); 
+			  
+			function drawChart() { 
+			  var data = google.visualization.arrayToDataTable([ 
+			  ['Akademik', 'Non-akademik'], 
+			  ['Akademik', 13], 
+			  ['Non-akademik', 2] 
+			]); 
+			  
+			  var options =  
+			   {'title':'Data prestasi',  'width':350,'height':300,is3D: true}; 
+				
+			  var chart =  
+			  new google.visualization.PieChart(document.getElementById('piechart')); 
+			  chart.draw(data, options); 
+			} 
+			</script> 
+    </div>
+    <div class="col-sm-4">
+        <!--svg class="icon icon-map-marker"><use xlink:href="#icon-map-marker"></use></svg-->
+          <h4>Penelitian Dosen (2021)</h4>
+			<script type="text/javascript">
+				google.charts.load("current", {packages:["corechart"]});
+				google.charts.setOnLoadCallback(drawChart);
+				function drawChart() {
+				  var data = google.visualization.arrayToDataTable([
+					["Element", "Density", { role: "style" } ],
+					["Penelitian", 6, "#b87333"],
+					["Pengabdian", 5, "silver"]
+				  ]);
+
+				  var view = new google.visualization.DataView(data);
+				  view.setColumns([0, 1,
+								   { calc: "stringify",
+									 sourceColumn: 1,
+									 type: "string",
+									 role: "annotation" },
+								   2]);
+
+				  var options = {
+					title: "Penelitian dan Pengabdian Dosen (2021)",
+					width: 350,
+					height: 300,
+					bar: {groupWidth: "95%"},
+					legend: { position: "none" },
+				  };
+				  var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+				  chart.draw(view, options);
+			  }
+			  </script>
+		<div id="barchart_values" style="width: 350px; height: 300px;"></div>
+    </div>
+</div>
+<!-- End 3 columns -->
+
+<!-- Start 3 columns -->
+<div class="three-shade-col">
+    <div class="col-sm-4">
+        <!--svg class="icon icon-envelope-o"><use xlink:href="#icon-envelope-o"></use></svg-->
 		<h4>Daya Tampung Mahasiswa </h4>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 				<script type="text/javascript">
